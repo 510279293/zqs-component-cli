@@ -1,0 +1,55 @@
+@import '../../style/var';
+@import '../../style/mixins/index';
+@import './mixin';
+
+// Input styles
+.@{z-prefix}-input {
+    .reset-component;
+    .input;
+  }
+  
+  //== Style for input-group: input with label, with button or dropdown...
+  .@{z-prefix}-input-group {
+    .reset-component;
+    .input-group(~'@{z-prefix}-input');
+    &-wrapper {
+      display: inline-block;
+      width: 100%;
+      text-align: start;
+      vertical-align: top; // https://github.com/z-design/z-design/issues/6403
+    }
+  }
+  
+  // Input with affix: prefix or suffix
+  .@{z-prefix}-input-affix-wrapper {
+    .reset-component;
+    .input-affix-wrapper(~'@{z-prefix}-input');
+  
+    // https://github.com/z-design/z-design/issues/6144
+    .@{z-prefix}-input {
+      min-height: 100%; // use min-height, assume that no smaller height to override
+    }
+  }
+  
+  .@{z-prefix}-input-password-icon {
+    color: @text-color-secondary;
+    cursor: pointer;
+    transition: all 0.3s;
+  
+    &:hover {
+      color: #333;
+    }
+  }
+  
+  .@{z-prefix}-input-clear-icon {
+    .clear-icon;
+    vertical-align: 0;
+  }
+  
+  .@{z-prefix}-input-textarea-clear-icon {
+    .clear-icon;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px 8px 0 0;
+  }

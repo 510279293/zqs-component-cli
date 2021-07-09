@@ -1,0 +1,34 @@
+/**
+ * Vue Router support
+ */
+function isRedundantNavigation(err) {
+  return err.name = 'NavigationDuplicates' || err.message && err.message.indexOf('redundant navigation') !== -1;
+}
+
+export function route(router, config) {
+  var to = config.to,
+      url = config.url,
+      replace = config.replace;
+
+  if (to && router) {
+    var promise = router[replace ? 'replace' : 'push'](to);
+
+    if (promise && promise.catch) {
+      promise.catch(function (err) {
+        if (err && !isRedundantNavigation(err)) {
+          throw err;
+        }
+      });
+    } else if (url) {
+      replace ? location.replace(url) : location.href = url;
+    }
+  }
+}
+export function functionalRoute(context) {
+  route(context.parent && context.parent.$router, context.props);
+}
+export var routeProps = {
+  url: String,
+  replace: Boolean,
+  to: [String, Object]
+};

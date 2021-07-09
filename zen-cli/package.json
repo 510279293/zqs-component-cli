@@ -1,0 +1,53 @@
+{
+  "name": "@zen/cli",
+  "version": "1.0.0",
+  "description": "",
+  "typings": "lib/index.d.ts",
+  "main": "lib/index.d.ts",
+  "bin": {
+    "zen-cli": "./lib/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc --watch"
+  },
+  "files": [
+    "lib",
+    "es",
+    "preset.js"
+  ],
+  "keywords": [],
+  "author": "zengqingsen",
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": "^2.5.22",
+    "vue-template-compiler": "^2.5.22"
+  },
+  "dependencies": {
+    "@babel/core": "^7.10.1",
+    "@babel/plugin-syntax-jsx": "^7.10.1",
+    "@babel/plugin-transform-object-assign": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.1",
+    "@babel/preset-flow": "^7.12.1",
+    "@babel/preset-react": "^7.12.7",
+    "@babel/preset-typescript": "^7.10.1",
+    "clean-css": "^4.2.3",
+    "commander": "^6.2.0",
+    "consola": "^2.15.0",
+    "execa": "^5.0.0",
+    "fs-extra": "^9.0.1",
+    "hash-sum": "^2.0.0",
+    "less": "^3.12.2",
+    "lodash": "^4.17.20",
+    "postcss-load-config": "^3.0.0",
+    "sass": "^1.30.0",
+    "webpack-merge": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/clean-css": "^4.2.3",
+    "@types/fs-extra": "^9.0.4",
+    "@types/less": "^3.0.2",
+    "@types/postcss-load-config": "^2.0.1"
+  }
+}

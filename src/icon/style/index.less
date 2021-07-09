@@ -1,0 +1,71 @@
+@import '../../style/var';
+@import './icon.module.less';
+
+@icon-url: "//at.alicdn.com/t/font_2195483_aqi3q0h39vu";
+@font-display: 'auto' ;
+
+.ie-rotate(@rotation) {
+   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=@rotation);
+}
+.rotate(@degrees) {
+    -webkit-transform: rotate(@degrees);
+    -ms-transform: rotate(@degrees); // IE9 only
+    -o-transform: rotate(@degrees);
+    transform: rotate(@degrees);
+}
+
+.animation(@animation) {
+    -webkit-animation: @animation;
+    -o-animation: @animation;
+    animation: @animation;
+}
+
+@font-face {
+  font-family: 'z-icons';
+  src: url('@{icon-url}.woff') format('woff'), /* chrome, firefox */
+       url('@{icon-url}.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  font-weight: normal;
+  font-display: @font-display;
+  font-style: normal;
+}
+
+[class^="z-icon-"], [class*=" z-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'z-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  vertical-align: baseline;
+  text-align: center;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.z-icon-loading {
+  animation: rotating 2s linear infinite;
+}
+
+.z-icon-right {
+  margin-left: 5px;
+}
+.z-icon-left {
+  margin-right: 5px;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

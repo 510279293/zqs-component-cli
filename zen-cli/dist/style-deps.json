@@ -1,0 +1,28 @@
+{
+  "map": {
+    "alert": [
+      "icon"
+    ],
+    "button": [
+      "icon"
+    ],
+    "button-group": [],
+    "grid": [],
+    "icon": [],
+    "info": [],
+    "input": [],
+    "loading": [],
+    "vc-notification": []
+  },
+  "sequence": [
+    "icon",
+    "button",
+    "alert",
+    "button-group",
+    "grid",
+    "info",
+    "input",
+    "loading",
+    "vc-notification"
+  ]
+}
